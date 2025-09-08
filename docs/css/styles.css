@@ -1,0 +1,71 @@
+:root{
+    --img-size: 50px;
+    --smallsvg-size: 30px;
+    --main-color: rgb(210, 210, 210);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#bigcontainer{
+    display:grid;
+    grid-template-columns: [column1-start]0.8fr [column1-end column2-start]3fr [column2-end column3-start] 0.8fr [column3-end];
+    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 4fr [row2-end];
+}   
+
+
+aside{
+    display:grid;
+    height: 100vh;
+    padding: 0.8rem;
+    grid-template-columns: [column1-start] 0.35fr [column1-end column2-start] 1fr [colulmn2-end];
+    grid-template-rows: var(--img-size);
+    grid-auto-rows: calc(var(--smallsvg-size) - 5px);
+    row-gap: 1rem;
+    align-items: center; 
+    background-color: rgb(73, 161, 249);
+    grid-area: row1-start/column1-start/row2-end/column1-end;
+}
+
+.spacer{
+    height:0.1rem;
+    grid-column: span 2;
+}
+
+svg{
+    justify-self: center;
+    color: white;
+    width: var(--smallsvg-size);
+    height: var(--smallsvg-size);
+}
+
+
+span{
+    /* align-self: center; */
+    /* position: relative;
+    bottom: calc(var(--img-size) * 2 / 5); */
+}
+
+img.dashboard{
+    justify-self: center;
+    height: var(--img-size);
+    width: var(--img-size);
+    filter: invert(100%);
+}
+
+header{
+    grid-column: column1-end/column3-end;
+}
+
+main{
+    background-color: var(--main-color);
+    grid-column: column1-end/column3-end;
+}
