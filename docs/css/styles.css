@@ -43,12 +43,12 @@ aside{
     cursor: pointer;
     align-items: center;
     transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
-    padding: 10px 40px;
+    padding: 10px clamp(15px, calc(100% - 140px), 55px);
 }      
 
 #dashboard-dashboard{
-    column-gap: 0.8rem;
-    padding: 10px 25px;
+    column-gap: 0.6rem;
+    padding: 10px clamp(5px, calc(100% - 160px), 35px);
 }
 
 .dashboard-row.active{
