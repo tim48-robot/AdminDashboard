@@ -35,24 +35,55 @@ aside{
     grid-area: row1-start/column1-start/row2-end/column1-end;
 }
 
+.dashboard-row, #dashboard-dashboard{
+    display:grid;
+    grid-column: span 2;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.3rem;
+    cursor: pointer;
+    align-items: center;
+    transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    padding: 10px 40px;
+}      
+
+#dashboard-dashboard{
+    column-gap: 0.8rem;
+    padding: 10px 25px;
+}
+
+.dashboard-row.active{
+    background-color: rgb(11, 124, 245);
+}
+
+span.active{
+    color:white;
+}
+
+span:hover{
+    color: rgb(255, 255, 255);
+}
+
 .spacer{
     height:0.1rem;
     grid-column: span 2;
 }
 
 svg{
+    width: 20px;
+    height: 20px;
+}
+
+svg.white{
     justify-self: center;
     color: white;
-    width: var(--smallsvg-size);
-    height: var(--smallsvg-size);
 }
 
 
-span{
-    /* align-self: center; */
-    /* position: relative;
-    bottom: calc(var(--img-size) * 2 / 5); */
-}
+/* span{
+     align-self: center; 
+     position: relative;
+    bottom: calc(var(--img-size) * 2 / 5); 
+} */
 
 img.dashboard{
     justify-self: center;
@@ -63,7 +94,14 @@ img.dashboard{
 
 header{
     grid-column: column1-end/column3-end;
+    display: grid;
+    row-gap: 25px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
 }
+
+
 
 main{
     background-color: var(--main-color);
