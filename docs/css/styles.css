@@ -1,6 +1,10 @@
 :root{
+    --bluecolor: rgb(73, 161, 249);
     --img-size: 50px;
+    --profilepicture: 40px;
+    --bigprofile: 55px;
     --smallsvg-size: 30px;
+    --welcomebutton: 50px;
     --main-color: rgb(210, 210, 210);
 }
 
@@ -17,21 +21,23 @@ html {
 
 #bigcontainer{
     display:grid;
+    height: 100vh;
     grid-template-columns: [column1-start]0.8fr [column1-end column2-start]3fr [column2-end column3-start] 0.8fr [column3-end];
-    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 4fr [row2-end];
+    grid-template-rows: [row1-start] auto [row1-end row2-start] 1fr [row2-end];
 }   
 
 
 aside{
     display:grid;
-    height: 100vh;
+    border: 2px outset black;
+    /* height: 100vh; */
     padding: 0.8rem;
     grid-template-columns: [column1-start] 0.35fr [column1-end column2-start] 1fr [colulmn2-end];
     grid-template-rows: var(--img-size);
     grid-auto-rows: calc(var(--smallsvg-size) - 5px);
     row-gap: 1rem;
     align-items: center; 
-    background-color: rgb(73, 161, 249);
+    background-color: var(--bluecolor);
     grid-area: row1-start/column1-start/row2-end/column1-end;
 }
 
@@ -43,12 +49,12 @@ aside{
     cursor: pointer;
     align-items: center;
     transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
-    padding: 10px clamp(15px, calc(100% - 140px), 55px);
+    padding: 10px clamp(15px, calc(100% - 175px), 40px);
 }      
 
 #dashboard-dashboard{
     column-gap: 0.6rem;
-    padding: 10px clamp(5px, calc(100% - 160px), 35px);
+    padding: 10px clamp(5px, calc(100% - 190px), 25px);
 }
 
 .dashboard-row.active{
@@ -59,8 +65,13 @@ span.active{
     color:white;
 }
 
-span:hover{
+span:not(.boldnoclick):hover{
     color: rgb(255, 255, 255);
+}
+
+span.profile:hover{
+   cursor: pointer;
+   color: rgb(73, 161, 249);
 }
 
 .spacer{
@@ -92,16 +103,75 @@ img.dashboard{
     filter: invert(100%);
 }
 
+img.profilepic{
+    height: var(--profilepicture);
+    width: var(--profilepicture);
+}
+
 header{
     grid-column: column1-end/column3-end;
     display: grid;
-    row-gap: 25px;
+    row-gap: 5px;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 3fr 1fr;
     align-items: center;
 }
 
+#searchbar, #profilenotif{
+    display:flex;
+    align-items: center;
+    padding: 0px 40px;
+    gap: 20px;
+}
 
+#profilenotif{
+    padding: 0px 0px;
+}
+
+div#welcomeuser{
+    display:grid;
+    align-items: center;
+    grid-template-columns: 2.3fr 1fr;
+    grid-column: span 2;
+}
+
+div#welcomecontainer{
+    display:flex;
+    padding: 10px var(--welcomebutton);
+    align-self: center;
+    gap: 20px;
+}
+
+div.flexboxgap{
+    gap: 25px;
+    justify-self: start;
+    display:flex;
+}
+
+button.clickcreate{
+    color:white;
+    padding: 10px;
+    border-radius: 20px;
+    width: 80px;
+    cursor: pointer;
+    border-color: transparent;
+    background-color: var(--bluecolor);
+}
+
+img#welcomepp{
+    width: var(--bigprofile);
+    height: var(--bigprofile);
+    
+}
+
+.square{
+    display: inline-block;
+    width: 92%;
+    height: 20px;
+    border: 2px solid rgb(227, 225, 225);
+    background-color: rgb(227, 225, 225);
+    border-radius: 15px;
+}
 
 main{
     background-color: var(--main-color);
