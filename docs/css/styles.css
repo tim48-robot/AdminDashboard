@@ -256,6 +256,13 @@ div#trending{
     grid-template-rows: auto 1fr;
 }
 
+div.flextrending{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
 div.wrapperpaddingbr{
     background-color: white;
     border-radius: 10px;
