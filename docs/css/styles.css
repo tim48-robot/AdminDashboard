@@ -256,7 +256,7 @@ div#trending{
     grid-template-rows: auto 1fr;
 }
 
-div#wrapperpaddingbr{
+div.wrapperpaddingbr{
     background-color: white;
     border-radius: 10px;
     border-color: transparent;
