@@ -1,3 +1,4 @@
+
 :root{
     --bluecolor: rgb(73, 161, 249);
     --img-size: 50px;
@@ -9,13 +10,18 @@
 }
 
 * {
+    font-family: "Cabin Sketch", cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.weighted{
+    /* font-weight: 1000; */
+}
+
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -69,13 +75,19 @@ span.active{
     color:white;
 }
 
-span:not(.boldnoclick):hover{
+span:not(.boldnoclick):not(.graytrending):hover{
     color: rgb(255, 255, 255);
 }
 
 span.profile:hover{
    cursor: pointer;
    color: rgb(73, 161, 249);
+}
+
+
+
+span.graytrending, p.textwrap{
+    color: #777;
 }
 
 div.spacer{
@@ -192,7 +204,7 @@ main{
     grid-column: column1-end/column3-end;
 }
 
-span#spanall{
+#spanall{
     margin-bottom: -20px;
     grid-column: 1/-1;
 }
@@ -275,7 +287,7 @@ div.paddingbr > *:not(.weighted){
 }
 
 p.textwrap{
-    width: 40ch;
+    width: clamp(30ch, 40ch, 100%);
     overflow-wrap: break-word;
     text-wrap: pretty;
 }
